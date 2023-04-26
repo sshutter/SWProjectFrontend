@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import myImage from "../images/default_img.jpg";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [campgrounds, setCampgrounds] = useState([]);
@@ -94,23 +95,18 @@ function Home() {
                       <b>Address: </b>
                       {campground.address}
                     </p>
-                    <p>
-                      <b>District: </b>
-                      {campground.district}
-                    </p>
-                    <p>
-                      <b>Region: </b>
-                      {campground.region}
-                    </p>
+
                     <p>
                       <b>Province: </b>
                       {campground.province}
                     </p>
-                    <p>
-                      <b>Postal Code: </b>
-                      {campground.postalcode}
-                    </p>
                   </div>
+                  <Link
+                    to={`/campgrounds/${campground._id}`}
+                    className="detail_btn"
+                  >
+                    Click to view detail
+                  </Link>
                 </div>
               </div>
             ))}
@@ -119,7 +115,7 @@ function Home() {
       ) : (
         <>
           <>
-            <h2>{campgrounds[0].province} Camps</h2>
+            <h2>{selectedProvince} Camps</h2>
             <div className="row row-cols-1 row-cols-md-3 g-4">
               {campgrounds.map((campground, index) => (
                 <div key={campground._id} className="col">
@@ -139,23 +135,18 @@ function Home() {
                         <b>Address: </b>
                         {campground.address}
                       </p>
-                      <p>
-                        <b>District: </b>
-                        {campground.district}
-                      </p>
-                      <p>
-                        <b>Region: </b>
-                        {campground.region}
-                      </p>
+
                       <p>
                         <b>Province: </b>
                         {campground.province}
                       </p>
-                      <p>
-                        <b>Postal Code: </b>
-                        {campground.postalcode}
-                      </p>
                     </div>
+                    <Link
+                      to={`/campgrounds/${campground._id}`}
+                      className="detail_btn"
+                    >
+                      Click to view detail
+                    </Link>
                   </div>
                 </div>
               ))}

@@ -362,6 +362,19 @@ footer {
   margin-bottom: 20px;
 }
 
+.search_btn:hover {
+  padding: 10px 20px;
+  border: 1px solid #436741;
+  border-radius: 5px;
+  background: #436741;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
 .result_card {
   background-color: #304b2e;
   border-radius: 20px;
@@ -380,4 +393,54 @@ footer {
 
 .card_img {
   width: 30%;
+}
+
+.detail_btn {
+  width: 50%;
+  border: 1px solid #304b2e;
+  border-radius: 5px;
+  background: #304b2e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  align-self: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.detail_btn:hover {
+  width: 50%;
+  border: 1px solid #436741;
+  border-radius: 5px;
+  background: #436741;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  align-self: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.top_inform {
+  /* background-color: wheat; */
+  text-align: left;
+}
+
+.inform_pic {
+  width: 30%;
+  margin: 20px;
+}
+
+.link_inform {
+  color: #304b2e;
+}
+
+.link_inform:hover {
+  color: #436741;
+}
+
+.inform_container {
+  background-color: #daeed9;
+  padding: 20px;
+  border-radius: 10px;
 }

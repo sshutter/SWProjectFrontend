@@ -25,8 +25,8 @@ function Header() {
             color: "#304b2e",
           }}
         />
-        <Link to="/">
-          <h3>About แคมป์กาว</h3>
+        <Link to="/campgrounds">
+          <h3>แคมป์กาว</h3>
         </Link>
       </div>
       <ul>

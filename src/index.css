@@ -377,3 +377,7 @@ footer {
 .title_text {
   color: #304b2e;
 }
+
+.card_img {
+  width: 30%;
+}

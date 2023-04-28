@@ -10,6 +10,7 @@ const register = async (userData) => {
     console.log(response.data.name);
     if (response.data) {
       localStorage.setItem("user", response.data.name);
+      localStorage.setItem("token", response.data.token); // Add this line
     }
     return response.data.name;
   } catch (error) {
@@ -24,6 +25,7 @@ const login = async (userData) => {
 
   if (response.data) {
     localStorage.setItem("user", response.data.name);
+    localStorage.setItem("token", response.data.token); // Add this line
   }
   console.log(response.data);
   return response.data;
@@ -32,7 +34,9 @@ const login = async (userData) => {
 // logout user
 const logout = () => {
   localStorage.setItem("user", null);
+  localStorage.setItem("token", null);
 };
+
 const authService = {
   register,
   logout,

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 import { GiCampingTent } from "react-icons/gi";
+import { HiSearchCircle } from "react-icons/hi";
 
 function Header() {
   const navigate = useNavigate();
@@ -19,15 +20,45 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <GiCampingTent
-          size={70}
-          style={{
-            color: "#304b2e",
-          }}
-        />
-        <Link to="/campgrounds">
-          <h3>แคมป์กาว</h3>
-        </Link>
+        <div className="row">
+          <div className="col">
+            <GiCampingTent
+              size={70}
+              style={{
+                color: "#304b2e",
+              }}
+            />
+            <Link to="/">
+              <h3
+                style={{
+                  fontSize: "2em",
+                  fontWeight: "bolder",
+                }}
+              >
+                แคมป์กาว
+              </h3>
+            </Link>
+          </div>
+          <div className="col">
+            <HiSearchCircle
+              size={70}
+              style={{
+                color: "#304b2e",
+              }}
+            />
+
+            <Link to="/campgrounds" className="search_link">
+              <h3
+                style={{
+                  fontSize: "2em",
+                  fontWeight: "600",
+                }}
+              >
+                Search
+              </h3>
+            </Link>
+          </div>
+        </div>
       </div>
       <ul>
         {user ? (

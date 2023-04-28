@@ -52,6 +52,11 @@ function SingleCamp() {
         <b>Postal Code: </b>
         {campData.postalcode}
       </p>
+      <div className="book_container">
+        <Link to={`/campgrounds/${campId}/booking`} className="booking_btn">
+          Book the campground
+        </Link>
+      </div>
     </div>
   );
 }

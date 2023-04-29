@@ -7,6 +7,7 @@ import Search from "./pages/Search";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import SingleCamp from "./pages/SingleCamp";
+import Edit from "./pages/Edit";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,6 +26,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/campgrounds/:campId" element={<SingleCamp />} />
             <Route path="/campgrounds/:campId/booking" element={<Booking />} />
+            <Route path="/campgrounds/:campId/edit" element={<Edit />} />
           </Routes>
         </div>
       </Router>

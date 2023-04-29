@@ -484,3 +484,23 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+.del_btn {
+  background-color: rgb(148, 12, 12);
+  border-color: rgb(148, 12, 12);
+}
+
+.del_btn:hover {
+  background-color: rgb(159, 39, 39);
+  border-color: rgb(159, 39, 39);
+}
+
+.edit_btn {
+  background-color: rgb(126, 125, 25);
+  border-color: rgb(126, 125, 25);
+}
+
+.edit_btn:hover {
+  background-color: rgb(168, 166, 38);
+  border-color: rgb(168, 166, 38);
+}

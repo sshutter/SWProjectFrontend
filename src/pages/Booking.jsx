@@ -31,7 +31,7 @@ function Booking() {
   };
 
   const handleBooking = () => {
-    if (!validateDates(startDate, endDate)) {
+    if (!upTo3Night(startDate, endDate)) {
       setErrorMessage("End date must be up to 3 days from start date");
       return;
     }
@@ -61,10 +61,14 @@ function Booking() {
       });
   };
 
-  function validateDates(startDate, endDate) {
+  function upTo3Night(startDate, endDate) {
     const oneDay = 1000 * 60 * 60 * 24; // Number of milliseconds in a day
     const diffInDays = Math.round(Math.abs((endDate - startDate) / oneDay));
     return diffInDays <= 3;
+  }
+
+  function validateDate(startDate, endDate) {
+    return startDate <= endDate;
   }
 
   return (
@@ -99,7 +103,19 @@ function Booking() {
             />
           </div>
         </div>
-        {!validateDates(startDate, endDate) && (
+
+        {!validateDate(startDate, endDate) ? (
+          <div className="error_message">
+            <Alert
+              variant="danger"
+              style={{
+                marginTop: "20px",
+              }}
+            >
+              The end date must be greater than the start date.
+            </Alert>
+          </div>
+        ) : !upTo3Night(startDate, endDate) ? (
           <div className="error_message">
             <Alert
               variant="danger"
@@ -110,6 +126,8 @@ function Booking() {
               The end date must be within 3 days of the start date.
             </Alert>
           </div>
+        ) : (
+          <></>
         )}
         <div className="book_btn_container">
           <Button className="book_btn" onClick={handleBooking}>

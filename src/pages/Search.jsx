@@ -56,7 +56,7 @@ function Search() {
                   value={selectedProvince}
                   onChange={handleProvinceChange}
                 >
-                  <option value="">-- Select Province --</option>
+                  <option value="">-- All Campgrounds --</option>
                   {provinceOptions.map((province, index) => (
                     <option key={index} value={province}>
                       {province}

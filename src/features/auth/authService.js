@@ -10,7 +10,8 @@ const register = async (userData) => {
     console.log(response.data.name);
     if (response.data) {
       localStorage.setItem("user", response.data.name);
-      localStorage.setItem("token", response.data.token); // Add this line
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("role", response.data.role);
     }
     return response.data.name;
   } catch (error) {
@@ -24,8 +25,10 @@ const login = async (userData) => {
   const response = await axios.post(API_URL + "login", userData);
 
   if (response.data) {
+    console.log(response.data);
     localStorage.setItem("user", response.data.name);
-    localStorage.setItem("token", response.data.token); // Add this line
+    localStorage.setItem("token", response.data.token);
+    localStorage.setItem("role", response.data.role);
   }
   console.log(response.data);
   return response.data;
@@ -35,6 +38,7 @@ const login = async (userData) => {
 const logout = () => {
   localStorage.setItem("user", null);
   localStorage.setItem("token", null);
+  localStorage.setItem("role", null);
 };
 
 const authService = {

@@ -122,6 +122,7 @@ function Edit() {
       .catch((error) => {
         console.error("There was a problem with the booking request:", error);
       });
+    navigate("/campgrounds");
   };
 
   return (

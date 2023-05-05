@@ -5,12 +5,14 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
 import { Button } from "react-bootstrap";
-import { Alert } from "react-bootstrap";
+import { Alert, Modal } from "react-bootstrap";
 
 function Booking() {
   const { campId } = useParams();
 
   const navigate = useNavigate();
+
+  const [showModal, setShowModal] = useState(false);
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -59,6 +61,7 @@ function Booking() {
       .catch((error) => {
         console.error("There was a problem with the booking request:", error);
       });
+    setShowModal(true);
   };
 
   function upTo3Night(startDate, endDate) {
@@ -133,6 +136,31 @@ function Booking() {
           <Button className="book_btn" onClick={handleBooking}>
             Book your campground
           </Button>
+          <Modal
+            show={showModal}
+            onHide={() => {
+              setShowModal(false);
+            }}
+          >
+            <Modal.Header closeButton>
+              <div className="alert" role="alert">
+                <h5>
+                  <b>You have booked the campground.</b>
+                </h5>
+              </div>
+            </Modal.Header>
+
+            <Modal.Footer>
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  setShowModal(false);
+                }}
+              >
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </div>
     </>
